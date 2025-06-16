@@ -6,7 +6,6 @@ const WorkspaceCreatePage = async () => {
   const user = await getCurrent();
 
   if (!user) redirect("/sign-in");
-  return <div>WorkspaceId</div>;
 
   return (
     <div className="w-full lg:max-w-xl">
