@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useDeleteMember } from "@/features/members/api/use-delete-member";
-import { useUpdateMembers } from "@/features/members/api/use-update-member";
+import { useUpdateMember } from "@/features/members/api/use-update-member";
 import { MemberRole } from "@/features/members/types";
 import { useConfirm } from "@/hooks/use-confirm";
 
@@ -32,7 +32,7 @@ export const MembersList = () => {
   const { mutate: deleteMember, isPending: isDeletingMember } =
     useDeleteMember();
   const { mutate: updateMember, isPending: isUpdatingMember } =
-    useUpdateMembers();
+    useUpdateMember();
 
   const handleUpdateMember = (memberId: string, role: MemberRole) => {
     updateMember({

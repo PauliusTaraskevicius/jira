@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const createWorkspaceSchema = z.object({
-  name: z.string().trim().min(1, "Required"),
+  name: z.string().trim().min(1, "Workspace name is required."),
   image: z
     .union([
       z.instanceof(File),
@@ -11,7 +11,7 @@ export const createWorkspaceSchema = z.object({
 });
 
 export const updateWorkspaceSchema = z.object({
-  name: z.string().trim().min(1, "Must be 1 or more characters").optional(),
+  name: z.string().trim().min(1, "Must be 1 or more characters.").optional(),
   image: z
     .union([
       z.instanceof(File),
